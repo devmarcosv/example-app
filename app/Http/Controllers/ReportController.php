@@ -10,7 +10,7 @@ class ReportController extends Controller
 {
     public function colaboradores()
     {
-        $relatorio = Colaborador::with(['unidade'])->select('nome', 'cpf', 'email', 'unidade_id')->get();
+        $relatorio = Collaborators::with(['unidade'])->select('nome', 'cpf', 'email', 'unidade_id')->get();
         return response()->json($relatorio);
     }
 
@@ -27,7 +27,7 @@ class ReportController extends Controller
 
     public function rankingColaboradores()
     {
-        $relatorio = Colaboradors::with(['unidade'])
+        $relatorio = Collaborators::with(['unidade'])
             ->orderByDesc('nota_desempenho')
             ->select('nome', 'cpf', 'email', 'unidade_id', 'nota_desempenho')
             ->get();
