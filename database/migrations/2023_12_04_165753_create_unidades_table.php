@@ -19,6 +19,7 @@ class CreateUnidadesTable extends Migration
             $table->char('nome_fantasia');
             $table->string('cnpj'); 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

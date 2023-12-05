@@ -20,6 +20,7 @@ class CreateCargoColaboradorTable extends Migration
             $table->integer('nota_desempenho')->nullable();
             
             $table->timestamps();
+            $tabke->softDeletes();
         });
     }
 
