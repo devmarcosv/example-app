@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\CollaboratorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,11 @@ use App\Http\Controllers\UnitController;
 */
 Route::post('unit/create', [UnitController::class, 'store']);
 Route::get('/unit', [UnitController::class, 'index']);
+
+// Colaboradores
+
+Route::get('/collab', [CollaboratorController::class, 'index']);
+Route::post('/collab/create', [CollaboratorController::class, 'create']);
 
 
 

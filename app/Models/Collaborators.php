@@ -17,4 +17,10 @@ class Collaborators extends Model
         'cpf',
         'email'
     ];
+
+      // Relação com o modelo Unidade
+      public function unidade()
+      {
+          return $this->belongsTo(Unidade::class);
+      }
 }
