@@ -15,9 +15,9 @@ class CreateCargoColaboradorTable extends Migration
     {
         Schema::create('cargo_colaborador', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cargo_id');
-            $table->foreignId('colaborador_id');
-            $table->integer('nota_desempenho');
+            $table->foreignId('cargo_id')->nullable();
+            $table->foreignId('colaborador_id')->nullable();
+            $table->integer('nota_desempenho')->nullable();
             
             $table->timestamps();
         });

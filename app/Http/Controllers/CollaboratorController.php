@@ -10,7 +10,7 @@ class ColaboradorController extends Controller
 {
     public function index()
     {
-        $colaboradores = Colaborador::with('cargo', 'unidade')->get();
+        $colaboradores = Colaborador::with('unidade')->get();
         return response()->json($colaboradores);
     }
 
@@ -20,7 +20,6 @@ class ColaboradorController extends Controller
             'nome' => 'required',
             'cpf' => 'required|unique:colaboradores',
             'email' => 'required|email|unique:colaboradores',
-            'cargo_id' => 'required|exists:cargos,id',
             'unidade_id' => 'required|exists:unidades,id',
         ]);
 
