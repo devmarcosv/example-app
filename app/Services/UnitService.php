@@ -6,7 +6,7 @@ use App\Models\Unit;
 
 class UnitService 
 {
-        //teste
+    
     public function create(array $data)
     {
         $payload = Unit::create([
